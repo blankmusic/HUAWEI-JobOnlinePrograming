@@ -13,6 +13,18 @@
 
 # 题解
 
+```java
+import java.util.*
+public calss Main{
+public static void main(String []args){
+
+
+
+}
+}
+
+```
+
 #  第二题 质数
   # 输入描述
   输入Low 和High ，Low>High<br>
