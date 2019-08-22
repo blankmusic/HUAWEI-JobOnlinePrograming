@@ -14,13 +14,32 @@
 # 题解
 
 ```java
-import java.util.*
-public calss Main{
-public static void main(String []args){
+import java.util.ArrayList;
+import java.util.Scanner;
 
+public class Main {
+  public static void main(String[] args){
+      Scanner s=new Scanner(System.in);
+      String[] str=s.nextLine().split(" ");
+      int count=Integer.parseInt(str[0],16);
+      ArrayList<String> ret=new ArrayList<>();
+      for(int i=1;i<count;i++){
+          if(str[i].charAt(i)=='A'||str[i].charAt(i)=='a'){
+              ret.add("12");
+              ret.add("34");
+          }else if(str[i].charAt(i)=='B'||str[i].charAt(i)=='b'){
+              ret.add("AB");
+              ret.add("CD");
+          }else {
+              ret.add(str[i]);
+          }
+      }
+      for(String r:ret){
+      System.out.print(r+" ");
+      }
 
+  }
 
-}
 }
 
 ```
@@ -32,6 +51,36 @@ public static void main(String []args){
   输出 minIndx 为low到high中所有质数的十位之和与个位之和中较小的那个。
   
   # 题解
+  ```java
+  import java.util.Scanner;
+
+public class Main {
+  public static void main(String[] args){
+      Scanner s=new Scanner(System.in);
+      int l=s.nextInt();
+      int h=s.nextInt();
+      int t1=0;
+      int t2=0;
+      for(int i=l;i<h;i++){
+          boolean b=true;
+          for(int t=2;t<i;t++) {
+              if (i % t == 0) {
+                  b = false;
+              }
+          }
+          if(b) {
+               t1+=i % 10;//个位和
+               t2+=i / 10 % 10;//十位和
+          }
+      }
+      System.out.println(Math.min(t1,t2));
+  
+      
+  }
+
+}
+  
+  ```
   
  # 第三题 群组消息数目
  # 题目描述
